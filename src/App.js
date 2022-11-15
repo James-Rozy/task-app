@@ -8,7 +8,11 @@ class App extends Component {
     super();
 
     this.state = {
-      task: { text: '', id: uniqid() },
+      task: {
+        text: '',
+        id: uniqid(),
+        number: 1,
+      },
       tasks: [],
     };
   }
@@ -18,6 +22,7 @@ class App extends Component {
       task: {
         text: e.target.value,
         id: this.state.task.id,
+        number: this.state.task.number,
       },
     });
   };
@@ -26,7 +31,11 @@ class App extends Component {
     e.preventDefault();
     this.setState({
       tasks: this.state.tasks.concat(this.state.task),
-      task: { text: '', id: uniqid() },
+      task: {
+        text: '',
+        id: uniqid(),
+        number: this.state.task.number + 1,
+      },
     });
   };
 
@@ -37,7 +46,7 @@ class App extends Component {
       <div className='App'>
         <h1>Task App</h1>
         <form action='#' className='task-form' onSubmit={this.onSubmitTask}>
-          <div className='input'>
+          <div className='input-div'>
             <label htmlFor='task-input'>Enter a task:</label>
             <input
               type='text'
