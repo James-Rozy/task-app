@@ -55,7 +55,9 @@ class App extends Component {
               onChange={this.onChangeTask}
               value={task.text}
             />
-            <button type='submit'>Add Task</button>
+            <button type='submit' className='submit btn'>
+              Add Task
+            </button>
           </div>
         </form>
         <Overview tasks={tasks} />
