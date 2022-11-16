@@ -24,7 +24,13 @@ h1 {
 
 .input-div {
   display: flex;
+  align-items: center;
   gap: 5px;
+}
+
+#task-input {
+  padding: 5px;
+  border: 1px solid black;
 }
 
 ul {
@@ -33,11 +39,12 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* border: 1px solid black; */
 }
 
 li {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 7fr 2fr;
+  align-items: center;
   gap: 10px;
 }
 
@@ -49,6 +56,29 @@ li {
 .li-number {
   width: 40px;
   border: 1px solid black;
-  /* border-right: 1px solid black; */
   text-align: center;
+}
+
+.li-controls {
+  display: flex;
+  gap: 5px;
+}
+
+/* BUTTONS */
+.btn {
+  border: 1px solid black;
+  padding: 5px;
+  color: white;
+}
+
+.submit {
+  background-color: green;
+}
+
+.edit {
+  background-color: orange;
+}
+
+.delete {
+  background-color: red;
 }
